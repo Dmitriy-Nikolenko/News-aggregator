@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpsertOrderRequest;
 use App\Models\Order;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -33,10 +34,10 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param UpsertOrderRequest $request
      * @return \Illuminate\Http\Response | RedirectResponse
      */
-    public function store(Request $request)
+    public function store(UpsertOrderRequest $request)
     {
         Order::query()->create($request->except('_token'));
         return redirect('/order');

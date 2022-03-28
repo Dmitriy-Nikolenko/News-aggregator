@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpsertOrderRequest;
 use App\Models\Order;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -69,11 +70,11 @@ class AdminOrderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param UpsertOrderRequest $request
+     * @param int $id
      * @return \Illuminate\Http\Response |RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(UpsertOrderRequest $request, $id)
     {
         $orders = Order::query()->findOrFail($id);
         $orders->update($request->except('_token'));

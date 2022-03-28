@@ -16,11 +16,22 @@ class Source extends Model
 
     protected $table = 'source';
 
-    protected $primaryKey = 'id';
+    protected $fillable = [
+        'title',
+        'link'
+    ];
 
     public $timestamps = true;
 
-    protected $fillable = [
-        'name',
-    ];
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+//    public function news(): HasMany // 1 источник много новостей метод hasMany
+//    {
+//        return $this->hasMany(News::class, 'source_id', 'id');
+//    }
+//    public function category(): HasMany // 1 источник много категорий метод hasMany
+//    {
+//        return $this->hasMany(Category::class, 'source_id', 'id');
+//    }
 }

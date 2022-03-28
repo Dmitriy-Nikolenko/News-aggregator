@@ -15,13 +15,32 @@ class SourceSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create('ru_RU');
-    for ($i=0; $i<10; $i++)
-    {
-        DB::table('source')->insert([
-            'name'=> $faker->realText(50),
-        ]);
-    }
+        $sources = [
+            'Яндекс Авто'           => 'https://news.yandex.ru/auto.rss',
+            'Яндекс АвтоСпорт'      => 'https://news.yandex.ru/auto_racing.rss',
+            'Яндекс Армия'          => 'https://news.yandex.ru/army.rss',
+            'Яндекс Гаджеты'        => 'https://news.yandex.ru/gadgets.rss',
+            'Яндекс Главное'        => 'https://news.yandex.ru/index.rss',
+            'Яндекс Единоборства'   => 'https://news.yandex.ru/martial_arts.rss',
+            'Яндекс ЖКХ'            => 'https://news.yandex.ru/communal.rss',
+            'Яндекс Здоровье'       => 'https://news.yandex.ru/health.rss',
+            'Яндекс Игры'           => 'https://news.yandex.ru/games.rss',
+            'Яндекс Интернет'       => 'https://news.yandex.ru/internet.rss',
+            'Яндекс Киберспорт'     => 'https://news.yandex.ru/cyber_sport.rss',
+            'Яндекс Кино'           => 'https://news.yandex.ru/movies.rss',
+            'Яндекс Космос'         => 'https://news.yandex.ru/cosmos.rss',
+            'Яндекс Культура'       => 'https://news.yandex.ru/culture.rss',
+            'Яндекс Лига чемпионов' => 'https://news.yandex.ru/championsleague.rss',
+            'Яндекс Музыка'         => 'https://news.yandex.ru/music.rss',
+            'Яндекс НХЛ'            => 'https://news.yandex.ru/nhl.rss',
+        ];
+
+        foreach ($sources as $sourceName => $sourceLink) {
+            DB::table('source')->insert([
+                'title'=>$sourceName,
+                'link'=>$sourceLink,
+            ]);
+        }
 
     }
 }

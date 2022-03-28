@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminNewsController;
 use App\Http\Controllers\AdminFeedbackController;
+use App\Http\Controllers\AdminParserController;
 use App\Http\Controllers\AdminSourceController;
 use App\Http\Controllers\DeleteNewsController;
 use App\Http\Controllers\FeedbackController;
@@ -30,7 +31,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/category', [NewsCategoryController::class, 'getCategoryNews']);
+//Route::get('/category', [NewsCategoryController::class, 'getCategoryNews']);
+Route::get('/source',[AdminParserController::class, 'index'])->name('source');
+Route::post('/source/parse', [AdminParserController::class, 'parse'])->name('source.parse');
+
+Route::get('/news', [NewsController::class, 'all']);
 
 Route::get('/news/category/{category}', [NewsController::class, 'getCategoryNews'])->name('categoryNews');
 

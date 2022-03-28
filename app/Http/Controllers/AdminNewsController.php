@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpsertNewsRequest;
 use App\Models\Category;
 use App\Models\News;
 use App\Models\Source;
@@ -34,16 +35,18 @@ class AdminNewsController extends Controller
     {
         $category = Category::all();
         $source = Source::all();
+
+
         return Response::view('admin.news.create', compact('category', 'source'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param UpsertNewsRequest $request
      * @return \Illuminate\Http\Response | RedirectResponse
      */
-    public function store(Request $request)
+    public function store(UpsertNewsRequest $request)
     {
         News::query()->create($request->except('_token'));
         return redirect()->route('news.index');
@@ -78,11 +81,11 @@ class AdminNewsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param UpsertNewsRequest $request
      * @param int $id
      * @return \Illuminate\Http\Response | RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(UpsertNewsRequest $request, $id)
     {
 
         $news = News::query()->findOrFail($id);
@@ -99,6 +102,9 @@ class AdminNewsController extends Controller
      */
     public function destroy($id)
     {
-        return redirect()->route('news.index');
+        News::destroy($id);
+        return Response::json([
+            'status' => true,
+        ]);
     }
 }

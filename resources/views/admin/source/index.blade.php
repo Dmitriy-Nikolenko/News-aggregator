@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', 'Admin Source')
 @section('content')
-    <a href="{{ route('source.create') }}" class="btn btn-dark mb-3 float-right" style="margin-left: 10px">Добавить источник новости</a>
+    <a href="{{ route('source.create') }}" class="btn mb-3 float-right" style="margin-left: 10px; background-color: #3AB5D0">Добавить источник новости</a>
     <table class="table">
         <thead class="thead-light">
         <tr>
