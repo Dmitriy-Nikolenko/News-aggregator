@@ -19,7 +19,7 @@ class CreateNewsTable extends Migration
             $table->text('preview')->comment('Короткий текст новости');
             $table->text('text')->comment('Полный текст новости');
             $table->string('photo', 1000)->nullable(false)->default('');
-            $table->foreignId('category_id')->constrained('category');
+        //  $table->foreignId('category_id')->constrained('category');
             $table->foreignId('source_id')->constrained('source');
             $table->timestamps();
         });

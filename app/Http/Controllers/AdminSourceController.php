@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpsertSourceRequest;
 use App\Models\Source;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -34,10 +35,10 @@ class AdminSourceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param UpsertSourceRequest $request
      * @return \Illuminate\Http\Response | RedirectResponse
      */
-    public function store(Request $request)
+    public function store(UpsertSourceRequest $request)
     {
         Source::query()->create($request->except('_token'));
         return redirect()->route('source.index');
@@ -69,11 +70,11 @@ class AdminSourceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param UpsertSourceRequest $request
+     * @param int $id
      * @return \Illuminate\Http\Response | RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(UpsertSourceRequest $request, $id)
     {
         $source = Source::query()->findOrFail($id);
         $source->update($request->except('_token'));

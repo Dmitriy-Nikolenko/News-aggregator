@@ -15,7 +15,7 @@
             <div class="col-md-4">
                 <div class="card bg-light mb-3" style="max-width: 100%;">
                     <div class="card-body">
-                        <button type="submit" class="btn btn-dark btn-block">Сохранить</button>
+                        <button type="submit" class="btn btn-block" style="background-color: #3AB5D0">Сохранить</button>
                         <a href="{{ route('source.index') }}" class="btn btn-danger btn-block">Отмена</a>
                     </div>
                 </div>

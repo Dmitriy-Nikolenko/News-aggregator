@@ -29,11 +29,18 @@ class News extends Model
 
     protected $fillable = [
         'title',
+        'photo',
         'preview',
         'text',
-        'photo',
         'category_id',
         'source_id',
+        'source_guid',
+        'link_news',
     ];
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
 
 }
+

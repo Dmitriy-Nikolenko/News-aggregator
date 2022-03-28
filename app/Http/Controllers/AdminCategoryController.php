@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpsertCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -34,10 +35,10 @@ class AdminCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param UpsertCategoryRequest $request
      * @return \Illuminate\Http\Response |RedirectResponse
      */
-    public function store(Request $request)
+    public function store(UpsertCategoryRequest $request)
     {
         Category::query()->create($request->except('_token'));
         return redirect('/category');
@@ -69,11 +70,11 @@ class AdminCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param UpsertCategoryRequest $request
+     * @param int $id
      * @return \Illuminate\Http\Response |RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(UpsertCategoryRequest $request, $id)
     {
         $category = Category::query()->findOrFail($id);
         $category->update($request->except($id));

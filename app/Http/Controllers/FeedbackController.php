@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpsertFeedbackRequest;
 use App\Models\Feedback;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -33,10 +34,10 @@ class FeedbackController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param UpsertFeedbackRequest $request
      * @return \Illuminate\Http\Response | RedirectResponse
      */
-    public function store(Request $request)
+    public function store(UpsertFeedbackRequest $request)
     {
         Feedback::query()->create($request->except('_token'));
         return redirect('feedback');

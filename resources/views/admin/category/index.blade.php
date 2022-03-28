@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', 'Admin Category')
 @section('content')
-    <a href="{{ route('category.create') }}" class="btn btn-dark mb-3 float-right" style="margin-left: 10px">Добавить категорию</a>
+    <a href="{{ route('category.create') }}" class="btn mb-3 float-right" style="margin-left: 10px; background-color: #3AB5D0">Добавить категорию</a>
     <table class="table">
         <thead class="thead-light">
         <tr>

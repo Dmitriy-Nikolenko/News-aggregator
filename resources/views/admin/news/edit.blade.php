@@ -19,17 +19,17 @@
                     <label for="title">Заголовок</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $news->title) }}">
                 </div>
-                <div class="form-group">
-                    <label for="category">Категория</label>
-                    <select class="form-control" id="category_id" name="category_id">
-                        @foreach($category as $item)
-                            <option
-                                value="{{ $item->id }}"
-                                @if($item->id == $news->category_id) selected @endif
-                            >{{ $item->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
+{{--                <div class="form-group">--}}
+{{--                    <label for="category">Категория</label>--}}
+{{--                    <select class="form-control" id="category_id" name="category_id">--}}
+{{--                        @foreach($category as $item)--}}
+{{--                            <option--}}
+{{--                                value="{{ $item->id }}"--}}
+{{--                                @if($item->id == $news->category_id) selected @endif--}}
+{{--                            >{{ $item->name }}</option>--}}
+{{--                        @endforeach--}}
+{{--                    </select>--}}
+{{--                </div>--}}
                 <div class="form-group">
                     <label for="photo">Фотография</label>
                     <input type="text" class="form-control" id="photo" name="photo" placeholder="Ссылка..." value="{{ old('photo', $news->photo) }}">
@@ -46,10 +46,7 @@
                     <label for="source">Источник новости</label>
                     <select class="form-control" id="source_id" name="source_id">
                         @foreach($source as $item)
-                            <option
-                                value="{{ $item->id }}"
-                                @if($item->id == $news->source_id) selected @endif
-                            >{{ $item->name }}</option>
+                            <option>{{ $item['link'] }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -57,7 +54,7 @@
             <div class="col-md-4">
                 <div class="card bg-light mb-3" style="max-width: 100%;">
                     <div class="card-body">
-                        <button type="submit" class="btn btn-dark btn-block">Сохранить</button>
+                        <button type="submit" class="btn btn-block" style="background-color: #3AB5D0">Сохранить</button>
                         <a href="{{ route('news.index') }}" class="btn btn-danger btn-block">Отмена</a>
                     </div>
                 </div>

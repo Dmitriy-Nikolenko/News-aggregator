@@ -35,7 +35,7 @@
             <div class="col-md-4">
                 <div class="card bg-light mb-3" style="max-width: 100%;">
                     <div class="card-body">
-                        <button type="submit" name="ok" class="btn btn-dark btn-block">Отправить</button>
+                        <button type="submit" name="ok" class="btn btn-block" style="background-color: #3AB5D0">Отправить</button>
                         <a href="/" class="btn btn-danger btn-block">Отмена</a>
                     </div>
                 </div>
