@@ -33,7 +33,7 @@ Route::get('/', function () {
 
 //Route::get('/category', [NewsCategoryController::class, 'getCategoryNews']);
 Route::get('/source',[AdminParserController::class, 'index'])->name('source');
-Route::post('/source/parse', [AdminParserController::class, 'parse'])->name('source.parse');
+Route::post('/source/parse/', [AdminParserController::class, 'parse'])->name('source.parse');
 
 Route::get('/news', [NewsController::class, 'all']);
 

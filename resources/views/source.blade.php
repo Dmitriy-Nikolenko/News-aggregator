@@ -9,7 +9,7 @@
         @csrf
         @foreach($sources as $key => $source)
             <div class="form-check">
-                <input name="sources[]" class="form-check-input" type="checkbox" value="{{ $source->id }}" id="{{ sprintf('checkbox%s', $source->id) }}">
+                <input name="sources[]" class="form-check-input" type="radio" value="{{ $source->id }}" id="{{ sprintf('checkbox%s', $source->id) }}">
                 <label class="form-check-label" for="{{ sprintf('checkbox%s', $source->id) }}">
                     {{ $source->title }}
                 </label>

@@ -32,7 +32,6 @@ class AdminParserController extends Controller
         foreach ($sources as $source) {
             $xmlParser = Facade::load($source->link);
 
-
             $parserData = $xmlParser->parse([
                     'title' => ['uses' => 'channel.title'],
                     'link' => ['uses' => 'channel.link'],
@@ -61,12 +60,11 @@ class AdminParserController extends Controller
                     ];
                 }
             }
-//            dd($forInsert);
-
-            News::query()->insert($forInsert);
+           News::query()->insert($forInsert);
         }
-            return \Response::view('news', [
-                'news' => News::all(),
-            ]);
+        $sourceId = $forInsert[0]['source_id'];
+         $source = Source::query()->findOrFail($sourceId);
+        $news = News::query()->select('*')->where('source_id', '=', $sourceId)->get();
+        return view('news', compact('news', 'source'));
     }
 }

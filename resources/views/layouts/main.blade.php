@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse menu-desktop" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/source">Источник новостей</a>
+                        <a class="nav-link" href="/source">ИСТОЧНИК НОВОСТЕЙ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/order">ЗАКАЗ</a>
@@ -32,10 +32,10 @@
                         <a class="nav-link" href="/feedback">ОТЗЫВЫ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">О НАС</a>
+                        <a class="nav-link" href="/news">ВСЕ НОВОСТИ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ПОМОЩЬ</a>
+                        <a class="nav-link" href="#">О НАС</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin">АДМИНКА</a>

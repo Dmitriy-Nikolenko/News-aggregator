@@ -6,9 +6,6 @@
     <div class="top__img">
         <h2 class="heading">Автоматический сбор новостей с выбранных сайтов</h2>
     </div>
-
-
-
         <h3 class="info__heading">Для кого подходит News aggregator:</h3>
     <section  class="users users_center" id="users">
         <div class="users__item users__img users__img1-1">
